@@ -24,7 +24,7 @@ function createNoteElement(id, content) {
 
   element.classList.add("note");
   element.value = content;
-  element.placeholder = "Bos note";
+  element.placeholder = "New note...";
 
   //   yeni olusturulan ve duzenlenen notun duzenlenmesini saglar
   element.addEventListener("change", () => {
@@ -56,7 +56,7 @@ function addNote() {
 
 function updateNote(id, newContent) {
   const notes = getNotes();
-  const target = notes.filter((note) => note.id == id)[0];
+  const targetNote = notes.filter((note) => note.id == id)[0];
 
   targetNote.content = newContent;
   saveNotes(notes);
